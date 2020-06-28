@@ -23,4 +23,21 @@ export default function() {
 
     https://www.ember-cli-mirage.com/docs/route-handlers/shorthands
   */
+
+  this.get('users', () => {
+    const users = [];
+
+    for (let index = 0; index < 50; index++) {
+      users.push({
+        id: index,
+        firstName: 'Jane',
+        lastName: `Doe #${index + 1}`,
+        username: 'Jane Doe',
+        email: 'test@test.com',
+        profilePicture: `https://api.adorable.io/avatars/172/test@test.com${index}.png`
+      });
+    }
+    
+    return { users };
+  });
 }
